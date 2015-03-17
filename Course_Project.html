@@ -69,11 +69,15 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 <div id="data-preprocessing" class="section level2">
 <h2>Data Preprocessing</h2>
-<pre class="r"><code>library(caret)
-library(rpart)
-library(rpart.plot)
-library(randomForest)
-library(e1071)</code></pre>
+<pre class="r"><code>library(caret)</code></pre>
+<pre><code>## Warning: package 'caret' was built under R version 3.1.2</code></pre>
+<pre class="r"><code>library(rpart)
+library(rpart.plot)</code></pre>
+<pre><code>## Warning: package 'rpart.plot' was built under R version 3.1.2</code></pre>
+<pre class="r"><code>library(randomForest)</code></pre>
+<pre><code>## Warning: package 'randomForest' was built under R version 3.1.2</code></pre>
+<pre class="r"><code>library(e1071)</code></pre>
+<pre><code>## Warning: package 'e1071' was built under R version 3.1.2</code></pre>
 <div id="read-the-data" class="section level3">
 <h3>Read the Data</h3>
 <p>Read the files (pml-training.csv, pml-testing.csv) into two data frames.</p>
@@ -197,7 +201,7 @@ confusionMatrix(predictionsB1, testData$classe)</code></pre>
 ## Detection Rate         0.2845   0.1911   0.1732   0.1619   0.1833
 ## Detection Prevalence   0.2863   0.1922   0.1756   0.1624   0.1835
 ## Balanced Accuracy      0.9988   0.9930   0.9952   0.9935   0.9985</code></pre>
-<p>As expected, Random Forest algorithm performed better than Decision Trees. Accuracy for Random Forest model was 0.994 (95% CI: (0.992, 0.996)) compared to 0.758 (95% CI: (0.748, 0.767)) for Decision Tree model. The random Forest model is choosen. The accuracy of the model is 0.994. Our Test data set comprises 20 cases. With an accuracy above 99% on our cross-validation data, we can expect that very few, or none, of the test samples will be missclassified.</p>
+<p>As expected, Random Forest algorithm performed better than Decision Trees. Accuracy for Random Forest model was 0.994 (95% CI: (0.992, 0.996)) compared to 0.758 (95% CI: (0.748, 0.767)) for Decision Tree model. As such, the Random Forest model is chosen. Our test data set comprises 20 cases. With an accuracy of above 99% on our cross-validation data, we can expect very low mis-classification of test samples.</p>
 </div>
 <div id="submission" class="section level2">
 <h2>Submission</h2>
